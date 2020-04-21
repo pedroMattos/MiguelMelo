@@ -1,14 +1,12 @@
 <template>
-  <div id="home">
-    <h1>Home view</h1>
-  </div>
+  <h1>Pagina sobre</h1>
 </template>
 
 <script>
 import setActive from '../components/mixins/ActiveNavItem';
 
 export default {
-  name: 'Home',
+  name: 'about-page',
   mixins: [setActive],
   data() {
     return {
