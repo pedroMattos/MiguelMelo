@@ -58,13 +58,13 @@ export default {
             padding: 20px 0;
             &::after {
               transition-duration: .5s;
-                  position: absolute;
-                  content: '';
-                  bottom: 10px;
-                  height: 1px;
-                  width: 0px;
-                  left: 0;
-                  background-color: $grey-text;
+              position: absolute;
+              content: '';
+              bottom: 10px;
+              height: 1px;
+              width: 0px;
+              left: 0;
+              background-color: $grey-text;
             }
           }
         }
