@@ -29,7 +29,7 @@ export default {
 @import '../../assets/scss/variables.scss';
   nav {
     position: relative;
-    padding: 50px 100px;
+    padding: 30px 100px 50px;
     img {
       width: 50px;
       transition-duration: .5s;
