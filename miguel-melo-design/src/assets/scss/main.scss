@@ -1,10 +1,27 @@
 @import '../../../node_modules/bootstrap-4-grid/css/grid.min.css';
 @import 'variables.scss';
 
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+// @media #{$medium-and-up} {
+//   .container {
+//     width: 85%;
+//   }
+// }
+// @media #{$large-and-up} {
+//   .container {
+//     width: 70%;
+//   }
+// }
+
 body {
   background-color: $black-body;
   margin: 0;
   color: $grey-text;
+  overflow-x: hidden;
   p {
     font-family: 'Poppins Thin', Arial, Helvetica, sans-serif;
   }
@@ -24,6 +41,7 @@ body {
 .no-spaces {
   margin: 0;
   padding: 0;
+  padding-inline-start: 0 !important;
 }
 
 .menu-item-active {
