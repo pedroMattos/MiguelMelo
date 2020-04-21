@@ -4,10 +4,26 @@
 body {
   background-color: $black-body;
   margin: 0;
+  color: $grey-text;
+  p {
+    font-family: 'Poppins Thin', Arial, Helvetica, sans-serif;
+  }
+  h1, h2 {
+    font-family: 'Poppins Medium', Arial, Helvetica, sans-serif;
+  }
 }
 
 .centered {
   text-align: center;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.no-spaces {
+  margin: 0;
+  padding: 0;
 }
 
 .menu-item-active {
