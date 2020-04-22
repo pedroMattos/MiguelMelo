@@ -38,6 +38,12 @@ body {
   font-size: 12px;
 }
 
+.clicked {
+  top: -20px !important;
+  transition-duration: .2s !important;
+  font-size: 12px;
+}
+
 .no-spaces {
   margin: 0;
   padding: 0;
