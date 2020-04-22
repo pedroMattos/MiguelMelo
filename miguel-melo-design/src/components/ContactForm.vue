@@ -33,6 +33,7 @@ export default {
         color: $grey-form;
         top: 0;
         transition-duration: .5s;
+        cursor: text;
       }
       input:-internal-autofill-selected {
         background-color: transparent !important;
