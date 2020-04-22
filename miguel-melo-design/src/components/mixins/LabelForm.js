@@ -18,11 +18,6 @@ export default {
           }
         })
       }
-      // for(let i = 0; i < input.length; i++) {
-      //   input[i].addEventListener('keydown', (el) => {
-      //     label[i].classList.add('clicked')
-      //   })
-      // }
     }
     labelMove();
   },
