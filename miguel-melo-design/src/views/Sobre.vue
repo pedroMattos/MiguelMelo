@@ -51,6 +51,7 @@ export default {
     }
     h1 {
       transform: rotate(270deg) scale(1);
+      cursor: default;
       // width: fit-content;
       text-align: center;
       position: absolute;
@@ -69,6 +70,7 @@ export default {
         margin-right: 40px;
         h2 {
           font-size: 18px;
+          cursor: default;
           position: relative;
           &::after {
             position: absolute;
@@ -85,7 +87,7 @@ export default {
               content: '';
               width: 180px !important;
               transition-duration: .5s;
-            } 
+            }
           }
         }
       }
