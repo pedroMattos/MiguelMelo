@@ -20,7 +20,7 @@ export default {
   .card-img {
     overflow: hidden;
     position: relative;
-    height: 180px;
+    height: 179px;
     &:hover {
       .overlay-content {
         opacity: 1;
@@ -34,7 +34,7 @@ export default {
     .overlay-content {
       position: absolute;
       z-index: 1;
-      padding: 67px 78px;
+      padding: 67px 79.1px;
       opacity: 0;
       transition-duration: .5s;
       background-color: $black-body-alpha;
