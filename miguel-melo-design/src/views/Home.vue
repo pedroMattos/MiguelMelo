@@ -1,19 +1,15 @@
 <template>
   <div id="home">
-    <gallery/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import setActive from '../components/mixins/ActiveNavItem';
-import gallery from '../components/Gallery.vue';
 
 export default {
   name: 'Home',
   mixins: [setActive],
-  components: {
-    gallery,
-  },
   data() {
     return {
       nomeRota: null,
