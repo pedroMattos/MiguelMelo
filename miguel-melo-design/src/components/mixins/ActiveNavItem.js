@@ -10,6 +10,8 @@ export default {
           const name = listItem[i].textContent;
           if (listItem[i].textContent == routeN) {
             listItem[i].classList.add('menu-item-active');
+          } else if (routeN == 'Projetos') {
+            listItem[0].classList.add('menu-item-active');
           } else {
             if (listItem[i].classList.contains('menu-item-active')) {
               listItem[i].classList.remove('menu-item-active');
