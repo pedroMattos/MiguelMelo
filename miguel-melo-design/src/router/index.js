@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/Sobre.vue';
 import Contact from '../views/Contato.vue';
+import indexProject from '../views/Projetos.vue';
+import fullView from '../views/ProjetoView.vue';
 
 Vue.use(VueRouter);
 
@@ -11,6 +13,18 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: indexProject,
+      },
+      {
+        path: ':nome',
+        name: 'ProjetoFullView',
+        component: fullView,
+      }
+    ],
   },
   {
     path: '/sobre',
