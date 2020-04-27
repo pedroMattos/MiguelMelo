@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav id="desktops">
     <p class="centered">
       <ul id="menu-itens">
         <router-link :to="{ name: 'Home' }">
@@ -27,7 +27,8 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/variables.scss';
-  nav {
+@import '../../assets/scss/breakpoint.scss';
+  nav#desktops {
     position: relative;
     padding: 30px 100px 50px;
     img {
