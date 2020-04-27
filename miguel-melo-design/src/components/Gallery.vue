@@ -1,9 +1,11 @@
 <template>
-  <section class="row" id="gallery">
-    <div v-for="item in projectData" :key="item.name" class="col-md-2 col-sm-12 no-spaces">
-      <router-link :to="{ name: 'ProjetoFullView', params: { nome: item.slug } }">
-        <card/>
-      </router-link>
+  <section class="container" id="gallery">
+    <div class="row">
+      <div v-for="item in projectData" :key="item.name" class="col-md-2 col-sm-12 no-spaces">
+        <router-link :to="{ name: 'ProjetoFullView', params: { nome: item.slug } }">
+          <card/>
+        </router-link>
+      </div>
     </div>
   </section>
 </template>
