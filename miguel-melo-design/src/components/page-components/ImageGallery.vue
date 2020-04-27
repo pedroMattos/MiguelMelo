@@ -40,7 +40,11 @@ export default {
       transition-duration: .5s;
       background-color: $black-body-alpha;
       @include breakpoint(smartphones) {
-        padding: 63px 152.1px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 50px;
       }
         p {
           font-size: 14px;
