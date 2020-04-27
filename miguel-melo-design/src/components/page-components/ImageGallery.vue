@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/variables.scss';
+@import '../../assets/scss/breakpoint.scss';
 
   .card-img {
     overflow: hidden;
@@ -38,13 +39,18 @@ export default {
       opacity: 0;
       transition-duration: .5s;
       background-color: $black-body-alpha;
-      p {
-        font-size: 12px;
-        margin: 0;
-        &.title {
-        font-size: 18px;
-        font-weight: 700;
+      @include breakpoint(smartphones) {
+        padding: 63px 152.1px;
       }
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          margin: 0;
+          color: $grey-text;
+          &.title {
+          font-size: 22px;
+          font-weight: 700;
+        }
       }
     }
     img {
