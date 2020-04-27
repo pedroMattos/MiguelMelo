@@ -1,5 +1,6 @@
 @import '../../../node_modules/bootstrap-4-grid/css/grid.min.css';
 @import 'variables.scss';
+@import 'breakpoint.scss';
 
 .container {
   margin: 0 auto;
@@ -22,11 +23,28 @@ body {
   margin: 0;
   color: $grey-text;
   overflow-x: hidden;
-  p {
+  p, h4, span, li, a {
     font-family: 'Poppins Thin', Arial, Helvetica, sans-serif;
   }
-  h1, h2 {
+  h1, h2, h3 {
     font-family: 'Poppins Medium', Arial, Helvetica, sans-serif;
+  }
+}
+
+.m-t {
+  @include breakpoint(smartphones) {
+    margin-top: 200px;
+  }
+}
+
+nav {
+  @include breakpoint(smartphones) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $black-body;
+    z-index: 3;
   }
 }
 
