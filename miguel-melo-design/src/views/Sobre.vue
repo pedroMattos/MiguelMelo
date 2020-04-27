@@ -43,11 +43,15 @@ export default {
 
 <style lang="scss">
 @import '../assets/scss/variables.scss';
+@import '../assets/scss/breakpoint.scss';
 
   #main-sobre {
     position: relative;
     #text-about {
       padding-top: 150px;
+      @include breakpoint(smartphones) {
+        padding-top: 0;
+      }
     }
     h1 {
       transform: rotate(270deg) scale(1);
@@ -58,6 +62,18 @@ export default {
       right: 0;
       transition-duration: .5s;
       bottom: 100px;
+      @include breakpoint(smartphones) {
+        position: unset;
+        text-align: left;
+        transform: rotate(0) scale(1);
+        right: unset;
+        transition-duration: .5s;
+        bottom: unset;
+        &:hover {
+          transform: scale(1.1) rotate(0);
+          transition-duration: .5s;
+        }
+      }
       &:hover {
         transform: scale(1.1) rotate(270deg);
         transition-duration: .5s;
@@ -66,6 +82,13 @@ export default {
     ul {
       list-style: none;
       display: inline-flex;
+      @include breakpoint(smartphones) {
+        display: block;
+        li {
+          margin-right: 0;
+          margin-top: 50px;
+        }
+      }
       li {
         margin-right: 40px;
         h2 {
@@ -87,6 +110,9 @@ export default {
               content: '';
               width: 180px !important;
               transition-duration: .5s;
+              @include breakpoint(smartphones) {
+                width: unset;
+              }
             }
           }
         }
@@ -102,12 +128,24 @@ export default {
         top: 30px;
         /* right: 100px; */
         left: 60px;
+        @include breakpoint(smartphones) {
+          width: 185px;
+          height: 185px;
+          top: unset;
+          bottom: -20px;
+          /* right: 100px; */
+          left: 5px;
+        }
       }
       #img {
         width: 340px;
         height: 340px;
         object-fit: cover;
         filter: grayscale(1);
+        @include breakpoint(smartphones) {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
