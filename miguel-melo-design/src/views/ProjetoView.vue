@@ -53,9 +53,9 @@ export default {
   #sec-project {
     position: relative;
     text-align: center;
-    @include breakpoint(smartphones) {
-      padding-left: 8px;
-    }
+    // @include breakpoint(smartphones) {
+    //   padding-left: 8px;
+    // }
     span {
       position: absolute;
       right: 50px;
