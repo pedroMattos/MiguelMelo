@@ -3,10 +3,12 @@
     <nav-bar v-if="screenW == 'desktop'"></nav-bar>
     <nav-mobile v-if="screenW == 'smartphone'"></nav-mobile>
     <router-view class="m-t"/>
-    <div class="row">
+    <div class="container">
+          <div class="row">
       <div class="col-sm-12">
         <p id="name" class="centered small-text">Miguel Melo Designer</p>
       </div>
+    </div>
     </div>
   </div>
 </template>
