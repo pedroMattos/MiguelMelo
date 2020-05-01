@@ -30,14 +30,22 @@ export default {
   },
   watch: {
     $route(to, from) {
+      const controller = document.getElementById('menu-controller');
+      // const close = document.getElementById('menu-controller-close');
       const menu = document.getElementById('menu-collapsed');
-      const open = document.getElementById('menu-controller');
-      const close = document.getElementById('menu-controller-close');
+      const ctx = this;
       if(menu.classList.contains('menu-non-collapsed')) {
-        close.removeAttribute('style');
-        open.removeAttribute('style');
         menu.classList.remove('menu-non-collapsed');
+        controller.children[0].classList.remove('close');
       }
+      // const menu = document.getElementById('menu-collapsed');
+      // const open = document.getElementById('menu-controller');
+      // const close = document.getElementById('menu-controller-close');
+      // if(menu.classList.contains('menu-non-collapsed')) {
+      //   close.removeAttribute('style');
+      //   open.removeAttribute('style');
+      //   menu.classList.remove('menu-non-collapsed');
+      // }
     }
   },
   beforeMount() {
@@ -49,7 +57,6 @@ export default {
   methods: {
     getScreen() {
       const theScreen = screen.width;
-      console.log(theScreen);
       if(theScreen < 990) {
         this.screenW = 'smartphone';
       } else {
