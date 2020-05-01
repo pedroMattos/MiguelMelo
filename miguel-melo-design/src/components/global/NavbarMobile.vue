@@ -1,8 +1,11 @@
 <template>
   <nav>
       <ul class="no-spaces" id="menu-itens-mobile">
-        <li id="menu-controller">Menu</li>
+        <li id="menu-controller">
+          <div class="lines-menu"></div>
+        </li>
         <li id="menu-controller-close">Close</li>
+        <br>
         <router-link :to="{ name: 'Home' }">
           <li class="centered"><img src="../../assets/logo.png" alt="Logo"></li>
         </router-link>
@@ -32,23 +35,29 @@ export default {
   methods: {
     openMenu() {
       const controller = document.getElementById('menu-controller');
-      const close = document.getElementById('menu-controller-close');
+      // const close = document.getElementById('menu-controller-close');
       const menu = document.getElementById('menu-collapsed');
       const ctx = this;
       controller.addEventListener('click', () => {
         if(!(menu.classList.contains('menu-non-collapsed'))) {
-          close.setAttribute('style', 'display:block')
-          controller.setAttribute('style', 'display:none');
+          // close.setAttribute('style', 'display:block')
+          // controller.setAttribute('style', 'display:none');
+          controller.children[0].classList.add('close');
           menu.classList.add('menu-non-collapsed');
-        }
-      });
-      close.addEventListener('click', () => {
-        if(menu.classList.contains('menu-non-collapsed')) {
-          close.removeAttribute('style');
-          controller.removeAttribute('style');
+        } else {
+            // close.removeAttribute('style');
+          // controller.setAttribute('style', 'display:none');
+          controller.children[0].classList.remove('close');
           menu.classList.remove('menu-non-collapsed');
         }
       });
+      // close.addEventListener('click', () => {
+      //   if(menu.classList.contains('menu-non-collapsed')) {
+      //     close.removeAttribute('style');
+      //     controller.removeAttribute('style');
+      //     menu.classList.remove('menu-non-collapsed');
+      //   }
+      // });
     },
   },
 };
@@ -56,14 +65,61 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/variables.scss';
+  .close {
+    transform: rotate(45deg);
+    right: 30px !important;
+    top: 10px !important;
+    transition-duration: .5s;
+    &::after {
+      opacity: 0 !important;
+      transition-duration: .5s;
+    }
+    &::before {
+      transform: rotate(-90deg);
+      top: 0 !important;
+      transition-duration: .5s;
+    }
+  }
   #menu-itens-mobile {
     position: relative;
     // padding: 20px !important;
     list-style: none;
     #menu-controller {
+      position: relative;
       text-align: right;
       margin: 20px 0;
       display: block;
+      height: 25px;
+      .lines-menu {
+        position: absolute;
+        height: 1px;
+        width: 30px;
+        background-color: $grey-text;
+        right: 25px;
+        top: 00px;
+        transition-duration: .5s;
+        &::after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 30px;
+          background-color: $grey-text;
+          right: 0;
+          top: 10px;
+          opacity: 1;
+          transition-duration: .5s;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 30px;
+          background-color: $grey-text;
+          right: 0;
+          top: 20px;
+          transition-duration: .5s;
+        }
+      }
     }
     #menu-controller-close {
       text-align: right;
@@ -83,6 +139,7 @@ export default {
     // width: 100vw;
     padding-left: 0 !important;
     text-align: center;
+    margin: 0;
     a li {
       color: $grey-text;
       margin: 50px 0;
