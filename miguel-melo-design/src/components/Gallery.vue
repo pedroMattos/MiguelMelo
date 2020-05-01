@@ -1,5 +1,5 @@
 <template>
-  <section class="container" id="gallery">
+  <section :class="screenW == 'smartphone' ? 'conatiner' : ''" id="gallery">
     <div class="row">
       <div v-for="item in projectData" :key="item.name" class="col-md-2 col-sm-12 no-spaces">
         <router-link :to="{ name: 'ProjetoFullView', params: { nome: item.slug } }">
@@ -20,6 +20,7 @@ export default {
   },
   data() {
     return {
+      screenW: null,
       projectData: [
         {
           slug: 'pardini', name: 'Pardini 1', type: 'Social Media',
@@ -41,6 +42,19 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.getScreen();
+  },
+  methods: {
+    getScreen() {
+      const theScreen = screen.width;
+      if(theScreen < 990) {
+        this.screenW = 'smartphone';
+      } else {
+        this.screenW = 'desktop';
+      }
+    },
   },
 };
 </script>
