@@ -23,10 +23,15 @@ export default {
 
 <style lang="scss">
 @import '../assets/scss/variables.scss';
+@import '../assets/scss/breakpoint.scss';
   #contact-form {
     display: inline-flex;
+    @include breakpoint(smartphones) {
+      display: block;
+    }
     .input-field {
       position: relative;
+      margin-bottom: 40px;
       label {
         position: absolute;
         font-family: 'Poppins', Arial, Helvetica, sans-serif;
