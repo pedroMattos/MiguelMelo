@@ -65,6 +65,11 @@ export default {
       font-weight: 700;
       transform: scale(1);
       cursor: pointer;
+      @include breakpoint(smartphones) {
+        right: 20px;
+        top: -33px;
+        font-size: 40px;
+      }
       &:hover {
         transform: scale(1.1);
         &::after {
