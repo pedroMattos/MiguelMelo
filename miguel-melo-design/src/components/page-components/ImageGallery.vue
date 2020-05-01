@@ -35,8 +35,12 @@ export default {
     .overlay-content {
       position: absolute;
       z-index: 1;
-      padding: 67px 79.1px;
       opacity: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      padding: 50px;
+      left: 0;
       transition-duration: .5s;
       background-color: $black-body-alpha;
       @include breakpoint(smartphones) {
