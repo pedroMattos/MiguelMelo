@@ -51,9 +51,6 @@ export default {
   beforeMount() {
     this.getScreen();
   },
-  mounted() {
-    document.title = 'Miguel Melo Design';
-  },
   methods: {
     getScreen() {
       const theScreen = screen.width;
