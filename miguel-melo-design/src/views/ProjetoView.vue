@@ -3,11 +3,11 @@
     <span id="close" @click.prevent="closePage"></span>
     <h1>{{ projectData[0].name }}</h1>
     <h2>Um projeto de {{ projectData[0].type }}</h2>
-    <div v-for="image in projectData[0].images"
-    :key="image.title"
+    <div v-for="(image, key) in projectData[0].images"
+    :key="key"
     class="images">
-      <p>{{ image.title }}</p>
-      <img src="../assets/images/campanha2.jpg" :alt="image.alt">
+      <!-- <p>{{ image.title }}</p> -->
+      <img :src="image" :alt="projectData[0].name">
     </div>
   </section>
 </template>
@@ -17,31 +17,31 @@ export default {
   name: 'full-view',
   data() {
     return {
-      projectData: [
-        {
-          slug: 'pardini', name: 'Pardini', type: 'Social Media',
-          images: [
-            {
-              title: 'Some title',
-              link: './assets/images/campanha2.jpg',
-              alt: 'Imagem Projeto',
-            },
-            {
-              title: 'New image',
-              link: './assets/images/campanha2.jpg',
-              alt: 'Imagem Projeto',
-            },
-          ],
-        },
-      ],
+      slug: this.$route.params.nome,
+      projectData: [],
     };
   },
   mounted() {
-    document.title = this.projectData[0].name + ' | Miguel Melo Design';
+    // document.title = this.projectData[0].name + ' | Miguel Melo Design';
+    this.getDataProject();
   },
   methods: {
     closePage() {
       this.$router.push({ name: 'Home' });
+    },
+    getDataProject() {
+      const ctx = this;
+      const projRef = this.$firebase.firestore().collection('jobs').where('Slug', '==', this.slug);
+      projRef.get().then((docs) => {
+        docs.forEach(doc => {
+          const data = {
+            name: doc.data().Nome,
+            type: doc.data().Tipo,
+            images: doc.data().Imagens,
+          };
+          ctx.projectData.push(data);
+        });
+      });
     },
   },
 };

@@ -1,16 +1,24 @@
 <template>
   <div class="card-img">
     <div class="overlay-content">
-      <p class="title centered">Pardini</p>
-      <p class="centered">Social Media</p>
+      <p class="title centered">{{ nameI }}</p>
+      <p class="centered">{{ typeI }}</p>
     </div>
-    <img src="../../assets/images/campanha2.jpg" alt="Campanhas">
+    <img :src="imgI" alt="Campanhas">
   </div>
 </template>
 
 <script>
 export default {
   name: 'img-gallery',
+  props: ['name', 'type', 'img'],
+  data() {
+    return {
+      nameI: this.name,
+      typeI: this.type,
+      imgI: this.img,
+    };
+  },
 };
 </script>
 

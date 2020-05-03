@@ -3,7 +3,10 @@
     <div class="row">
       <div v-for="item in projectData" :key="item.name" class="col-md-2 col-sm-12 no-spaces">
         <router-link :to="{ name: 'ProjetoFullView', params: { nome: item.slug } }">
-          <card/>
+          <card :name="item.name"
+          :type="item.type"
+          :img="item.images[0]"
+          />
         </router-link>
       </div>
     </div>
@@ -21,30 +24,12 @@ export default {
   data() {
     return {
       screenW: null,
-      projectData: [
-        {
-          slug: 'pardini', name: 'Pardini 1', type: 'Social Media',
-          images: [
-            {
-              link: '../../assets/images/campanha2.jpg',
-              alt: 'Imagem Projeto',
-            },
-          ],
-        },
-        {
-          slug: 'perini', name: 'Pardini 2', type: 'Social Media',
-          images: [
-            {
-              link: '../../assets/images/campanha2.jpg',
-              alt: 'Imagem Projeto',
-            },
-          ],
-        },
-      ],
+      projectData: [],
     };
   },
   mounted() {
     this.getScreen();
+    this.getData();
   },
   methods: {
     getScreen() {
@@ -54,6 +39,22 @@ export default {
       } else {
         this.screenW = 'desktop';
       }
+    },
+    getData() {
+      const ref = this.$firebase.firestore().collection('jobs');
+      const ctx = this;
+      ref.get().then((docs) => {
+        docs.forEach((doc) => {
+          const dataProject = {
+            name: doc.data().Nome,
+            slug: doc.data().Slug,
+            type: doc.data().Tipo,
+            images: doc.data().Imagens,
+            alt: doc.data().Nome,
+          };
+          ctx.projectData.push(dataProject);
+        });
+      });
     },
   },
 };
