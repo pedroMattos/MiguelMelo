@@ -5,6 +5,7 @@ import About from '../views/Sobre.vue';
 import Contact from '../views/Contato.vue';
 import indexProject from '../views/Projetos.vue';
 import fullView from '../views/ProjetoView.vue';
+import indexPannel from '../views/HomePainel.vue';
 
 Vue.use(VueRouter);
 
@@ -23,7 +24,7 @@ const routes = [
         path: ':nome',
         name: 'ProjetoFullView',
         component: fullView,
-      }
+      },
     ],
   },
   {
@@ -35,6 +36,11 @@ const routes = [
     path: '/contato',
     name: 'Contato',
     component: Contact,
+  },
+  {
+    path: '/pannel',
+    name: 'Painel',
+    component: indexPannel,
   },
   // {
   //   path: '/about',
