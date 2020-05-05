@@ -69,6 +69,7 @@ nav {
 }
 
 .menu-item-active {
+  position: relative;
   &::after {
     position: absolute;
     content: '';
@@ -78,5 +79,10 @@ nav {
     left: 0;
     background-color: $grey-text;
     transition-duration: .5s;
+    @include breakpoint(smartphones) {
+      bottom: 0px;
+      left: 0;
+      width: 100% !important;
+    }
   }
 }
