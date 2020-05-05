@@ -65,6 +65,7 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/variables.scss';
+@import '../../assets/scss/breakpoint.scss';
   .close {
     transform: rotate(45deg);
     right: 30px !important;
@@ -144,6 +145,11 @@ export default {
       color: $grey-text;
       margin: 50px 0;
       font-size: 25px;
+      @include breakpoint(smartphones) {
+        width: fit-content;
+        margin: 50px auto;
+        list-style: none;
+      }
       // span {
       //   &::after {
       //     content: '';
