@@ -6,7 +6,9 @@
     <div class="container">
           <div class="row">
       <div class="col-sm-12">
-        <p id="name" class="centered small-text">Miguel Melo Designer</p>
+        <p id="name" class="centered small-text">Miguel Melo Designer
+          <br>
+          <router-link class="pannel-link" :to="{ name: 'Painel' }">Painel</router-link></p>
       </div>
     </div>
     </div>
@@ -69,5 +71,9 @@ export default {
 @import './assets/scss/breakpoint.scss';
   #name {
     margin-top: 20px;
+  }
+  .pannel-link {
+    color: $grey-text;
+    text-decoration: none;
   }
 </style>
