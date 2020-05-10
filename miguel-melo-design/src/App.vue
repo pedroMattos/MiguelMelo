@@ -4,13 +4,11 @@
     <nav-mobile v-if="screenW == 'smartphone'"></nav-mobile>
     <router-view class="m-t"/>
     <div class="container">
-          <div class="row">
-      <div class="col-sm-12">
-        <p id="name" class="centered small-text">Miguel Melo Designer
-          <br>
-          <router-link class="pannel-link" :to="{ name: 'Painel' }">Painel</router-link></p>
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="name" class="centered small-text">Miguel Melo Designer</p>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </template>
@@ -32,22 +30,16 @@ export default {
   },
   watch: {
     $route(to, from) {
-      const controller = document.getElementById('menu-controller');
-      // const close = document.getElementById('menu-controller-close');
-      const menu = document.getElementById('menu-collapsed');
-      const ctx = this;
-      if(menu.classList.contains('menu-non-collapsed')) {
-        menu.classList.remove('menu-non-collapsed');
-        controller.children[0].classList.remove('close');
+      if(this.screenW == 'smartphone') {
+        const controller = document.getElementById('menu-controller');
+        // const close = document.getElementById('menu-controller-close');
+        const menu = document.getElementById('menu-collapsed');
+        const ctx = this;
+        if(menu.classList.contains('menu-non-collapsed')) {
+          menu.classList.remove('menu-non-collapsed');
+          controller.children[0].classList.remove('close');
+        }
       }
-      // const menu = document.getElementById('menu-collapsed');
-      // const open = document.getElementById('menu-controller');
-      // const close = document.getElementById('menu-controller-close');
-      // if(menu.classList.contains('menu-non-collapsed')) {
-      //   close.removeAttribute('style');
-      //   open.removeAttribute('style');
-      //   menu.classList.remove('menu-non-collapsed');
-      // }
     }
   },
   beforeMount() {
@@ -71,9 +63,5 @@ export default {
 @import './assets/scss/breakpoint.scss';
   #name {
     margin-top: 20px;
-  }
-  .pannel-link {
-    color: $grey-text;
-    text-decoration: none;
   }
 </style>
