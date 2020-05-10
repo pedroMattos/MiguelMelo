@@ -1,0 +1,13 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  color: $grey-text;
+  cursor: pointer;
+  border-bottom: 1px solid $grey-text;
+  border-right: 1px solid $grey-text;
+  min-width: 100px;
+  height: 30px;
+  text-align: left;
+  padding-left: 5px;
+  text-transform: uppercase;
+}
