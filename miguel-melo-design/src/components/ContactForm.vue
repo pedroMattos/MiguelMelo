@@ -1,23 +1,40 @@
 <template>
-  <form id="contact-form" action="">
+  <form id="contact-form" @submit.prevent="sendMail">
     <div class="input-field">
       <label class="label" for="name-client">Nome</label>
-      <input class="input" type="text" name="nameC" id="name-client">
+      <input class="input" type="text" v-model="name" name="nameC" id="name-client">
     </div>
     <div class="input-field">
       <label class="label" for="email-client">Email</label>
-      <input class="input" type="email" name="emailC" id="email-client">
+      <input class="input" type="email" v-model="from" name="emailC" id="email-client">
     </div>
     <div class="input-field">
       <label class="label" for="tel-client">Telefone</label>
-      <input class="input" type="tel" name="telC" id="tel-client">
+      <input class="input" type="tel" v-model="phone" name="telC" id="tel-client">
     </div>
+    <input type="submit" class="btn" value="Enviar">
   </form>
 </template>
 
 <script>
 export default {
   name: 'contact-form',
+  data() {
+    return {
+      name: null,
+      from: null,
+      phone: null,
+    };
+  },
+  mounted() {
+    this.sendMail();
+  },
+  methods: {
+    sendMail() {
+      // let sendEMail = require('../../functions/mail/mailConfig');
+      sendEMail(this.name, this.from, this.phone);
+    },
+  },
 };
 </script>
 
