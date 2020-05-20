@@ -1,19 +1,22 @@
 <template>
-  <form id="contact-form" @submit.prevent="sendMail">
-    <div class="input-field">
-      <label class="label" for="name-client">Nome</label>
-      <input class="input" type="text" v-model="name" name="nameC" id="name-client">
-    </div>
-    <div class="input-field">
-      <label class="label" for="email-client">Email</label>
-      <input class="input" type="email" v-model="from" name="emailC" id="email-client">
-    </div>
-    <div class="input-field">
-      <label class="label" for="tel-client">Telefone</label>
-      <input class="input" type="tel" v-model="phone" name="telC" id="tel-client">
-    </div>
-    <input type="submit" class="btn" value="Enviar">
-  </form>
+  <div>
+    <form id="contact-form" @submit.prevent="sendMail">
+      <div class="input-field">
+        <label class="label" for="name-client">Nome</label>
+        <input class="input" type="text" v-model="form.name" name="nameC" id="name-client">
+      </div>
+      <div class="input-field">
+        <label class="label" for="email-client">Email</label>
+        <input class="input" type="email" v-model="form.from" name="emailC" id="email-client">
+      </div>
+      <div class="input-field">
+        <label class="label" for="tel-client">Telefone</label>
+        <input class="input" type="tel" v-model="form.phone" name="telC" id="tel-client">
+      </div>
+      <input type="submit" class="btn" value="Enviar">
+    </form>
+    <p>{{mensagem}}</p>
+  </div>
 </template>
 
 <script>
@@ -21,18 +24,40 @@ export default {
   name: 'contact-form',
   data() {
     return {
-      name: null,
-      from: null,
-      phone: null,
+      mensagem: null,
+      form: {
+        name: null,
+        from: null,
+        phone: null
+      }
     };
-  },
-  mounted() {
-    this.sendMail();
   },
   methods: {
     sendMail() {
-      // let sendEMail = require('../../functions/mail/mailConfig');
-      sendEMail(this.name, this.from, this.phone);
+      //formar url
+      let url = '/contact/index.php';
+      //formar conteúdo
+      let formData = new FormData;
+      for (const key in this.form) {
+        formData.append(key, this.form[key]);
+      }
+      // const reqHeaders = new Headers({"Content-Type": "multipart/form-data"});
+      fetch(url, {
+        method: "POST",
+        body: formData
+      })
+      .then(resp => {
+        console.log('resp =>', resp);
+        if (resp.status == 201){
+          this.mensagem = 'Enviado!';
+        } else {
+          this.mensagem = 'Houve um erro ao enviar';
+        }
+        return resp.text()
+      })
+      .then(text => {
+        console.log('text =>', text);
+      });
     },
   },
 };
