@@ -6,14 +6,14 @@ import 'firebase/firebase-storage';
 // import firebaseConfig from './firebaseConfig';
 
 export const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyDvDgUhMaGxaTk_aYkNJDC-PwQ_FnRl8Fw",
-  authDomain: "miguel-melo-design-test-bd.firebaseapp.com",
-  databaseURL: "https://miguel-melo-design-test-bd.firebaseio.com",
-  projectId: "miguel-melo-design-test-bd",
-  storageBucket: "miguel-melo-design-test-bd.appspot.com",
-  messagingSenderId: "407552089199",
-  appId: "1:407552089199:web:4955f1332719008142819a",
-  measurementId: "G-FYKPR1S86J",
+  apiKey: "AIzaSyCXIbcGenHCyjxJU33W6Z6UrE3TrBPLsr0",
+  authDomain: "miguel-melo-design.firebaseapp.com",
+  databaseURL: "https://miguel-melo-design.firebaseio.com",
+  projectId: "miguel-melo-design",
+  storageBucket: "miguel-melo-design.appspot.com",
+  messagingSenderId: "316780265137",
+  appId: "1:316780265137:web:863059304ea4e7e02c6c90",
+  measurementId: "G-1HT8JMXX2D"
 });
 // exporta o metodo de autenticação e o banco de dados
 // export default firebaseApp.auth() && firebaseApp.firestore();
