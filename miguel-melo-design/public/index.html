@@ -13,5 +13,18 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      function mascara(el, masc) {
+        v_obj = el
+        v_fun = masc
+        setTimeout(v_obj.value = v_fun(v_obj.value),1)
+      }
+      function mascarate(v){
+          v = v.replace(/\D/g,"");
+          v = v.replace(/^(\d{2})(\d)/g,"($1) $2");
+          v = v.replace(/(\d)(\d{4})$/,"$1-$2");
+          return v;
+        }
+    </script>
   </body>
 </html>
