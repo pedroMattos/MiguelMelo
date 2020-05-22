@@ -57,6 +57,7 @@ export default {
           &.list-item {
             position: relative;
             padding: 20px 0;
+            font-weight: 600;
             &::after {
               transition-duration: .5s;
               position: absolute;
