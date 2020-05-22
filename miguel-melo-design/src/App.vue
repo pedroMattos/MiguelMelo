@@ -2,6 +2,9 @@
   <div id="app">
     <nav-bar v-if="screenW == 'desktop'"></nav-bar>
     <nav-mobile v-if="screenW == 'smartphone'"></nav-mobile>
+    <base-spinner></base-spinner>
+    <button style="display:none" id="show" @click="spinnerShow">Spinner</button>
+    <button style="display:none" id="hide" @click="spinnerHide">Spinner</button>
     <router-view class="m-t"/>
     <div class="container">
       <div class="row">
@@ -16,12 +19,14 @@
 <script>
 import navbar from './components/global/Navbar.vue';
 import navbarMobile from './components/global/NavbarMobile.vue';
+import spinner from './components/global/Spinner.vue';
 
 export default {
   name: 'app',
   components: {
     'nav-bar': navbar,
     'nav-mobile': navbarMobile,
+    'base-spinner': spinner,
   },
   data() {
     return {
@@ -45,6 +50,10 @@ export default {
   beforeMount() {
     this.getScreen();
   },
+  mounted() {
+    const show = document.getElementById('show');
+    show.click();
+  },
   methods: {
     getScreen() {
       const theScreen = screen.width;
@@ -53,6 +62,12 @@ export default {
       } else {
         this.screenW = 'desktop';
       }
+    },
+    spinnerShow() {
+      this.$root.$emit('Spinner::show');
+    },
+    spinnerHide() {
+      this.$root.$emit('Spinner::hide');
     },
   },
 };
@@ -63,5 +78,6 @@ export default {
 @import './assets/scss/breakpoint.scss';
   #name {
     margin-top: 20px;
+    font-weight: 600;
   }
 </style>
