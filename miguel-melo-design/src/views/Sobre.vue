@@ -38,6 +38,10 @@ export default {
       nomeRota: null,
     };
   },
+  // mounted() {
+  //   const show = document.getElementById('show');
+  //   show.click();
+  // },
 };
 </script>
 
@@ -95,6 +99,10 @@ export default {
           font-size: 18px;
           cursor: default;
           position: relative;
+          margin-right: 50px;
+          @include breakpoint(smartphones) {
+            margin-right: 0;
+          }
           &::after {
             position: absolute;
             content: '';
