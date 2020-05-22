@@ -28,6 +28,8 @@ export default {
     };
   },
   mounted() {
+    const show = document.getElementById('show');
+    show.click();
     this.getScreen();
     this.getData();
   },
@@ -54,6 +56,8 @@ export default {
           };
           ctx.projectData.push(dataProject);
         });
+        const hide = document.getElementById('hide');
+        hide.click();
       });
     },
   },
