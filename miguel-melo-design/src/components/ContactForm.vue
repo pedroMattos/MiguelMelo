@@ -11,7 +11,7 @@
       </div>
       <div class="input-field">
         <label class="label" for="tel-client">Telefone</label>
-        <input class="input" type="tel" v-model="form.phone" name="telC" id="tel-client">
+        <input class="input" type="text" v-model="form.phone" name="telC" id="tel-client">
       </div>
       <input type="submit" class="btn" value="Enviar">
     </form>
@@ -28,9 +28,20 @@ export default {
       form: {
         name: null,
         from: null,
-        phone: null
+        phone: null,
       }
     };
+  },
+  // watch: {
+  //   'form.phone'(val) {
+  //     console.log(val);
+  //   },
+  // },
+  mounted() {
+    let tel = document.getElementById('tel-client')
+    tel.setAttribute('onkeyup', 'mascara(this, mascarate)')
+    tel.setAttribute('maxlength', '15')
+    tel.setAttribute('onkeypress', 'return event.charCode >= 48 && event.charCode <= 57')
   },
   methods: {
     sendMail() {
