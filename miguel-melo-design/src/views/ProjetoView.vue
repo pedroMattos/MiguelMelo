@@ -1,8 +1,8 @@
 <template>
   <section id="sec-project">
     <span id="close" @click.prevent="closePage"></span>
-    <h1>{{ projectData[0].name }}</h1>
-    <h2>Um projeto de {{ projectData[0].type }}</h2>
+    <h1 v-if="projectData[0].name">{{ projectData[0].name }}</h1>
+    <h2 v-if="projectData[0].type">Um projeto de {{ projectData[0].type }}</h2>
     <div v-for="(image, key) in projectData[0].images"
     :key="key"
     class="images">
@@ -18,12 +18,20 @@ export default {
   data() {
     return {
       slug: this.$route.params.nome,
-      projectData: [],
+      projectData: [
+        {
+          name: null,
+          type: null,
+          images: null,
+        }
+      ],
     };
   },
   mounted() {
     // document.title = this.projectData[0].name + ' | Miguel Melo Design';
     this.getDataProject();
+    const show = document.getElementById('show');
+    show.click();
   },
   methods: {
     closePage() {
@@ -34,13 +42,19 @@ export default {
       const projRef = this.$firebase.firestore().collection('jobs').where('Slug', '==', this.slug);
       projRef.get().then((docs) => {
         docs.forEach(doc => {
-          const data = {
-            name: doc.data().Nome,
-            type: doc.data().Tipo,
-            images: doc.data().Imagens,
-          };
-          ctx.projectData.push(data);
+          ctx.$set(ctx.projectData[0], 'name', doc.data().Nome);
+          ctx.$set(ctx.projectData[0], 'type', doc.data().Tipo);
+          ctx.$set(ctx.projectData[0], 'images', doc.data().Imagens);
+          // const data = {
+          //   name: doc.data().Nome,
+          //   type: doc.data().Tipo,
+          //   images: doc.data().Imagens,
+          // };
+          // ctx.projectData.push(data);
+
         });
+        const hide = document.getElementById('hide');
+        hide.click();
       });
     },
   },
