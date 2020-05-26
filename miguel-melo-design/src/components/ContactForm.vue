@@ -3,15 +3,15 @@
     <form id="contact-form" @submit.prevent="sendMail">
       <div class="input-field">
         <label class="label" for="name-client">Nome</label>
-        <input class="input" type="text" v-model="form.name" required name="nameC" id="name-client">
+        <input class="input" type="text" v-model="form.name" autocomplete="new-password" required name="nameC" id="name-client">
       </div>
       <div class="input-field">
         <label class="label" for="email-client">Email</label>
-        <input class="input" type="email" v-model="form.from" required name="emailC" id="email-client">
+        <input class="input" type="email" v-model="form.from" autocomplete="new-password" required name="emailC" id="email-client">
       </div>
       <div class="input-field">
         <label class="label" for="tel-client">Telefone</label>
-        <input class="input" type="text" v-model="form.phone" required name="telC" id="tel-client">
+        <input class="input" type="text" v-model="form.phone" autocomplete="new-password" required name="telC" id="tel-client">
       </div>
       <input type="submit" class="btn" value="Enviar">
     </form>
