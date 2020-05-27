@@ -59,11 +59,12 @@ export default {
     }
     h1 {
       transform: rotate(270deg) scale(1);
+      letter-spacing: 5px;
       cursor: default;
       // width: fit-content;
       text-align: center;
       position: absolute;
-      right: 0;
+      right: -25px;
       transition-duration: .5s;
       bottom: 100px;
       @include breakpoint(smartphones) {
@@ -100,6 +101,7 @@ export default {
           cursor: default;
           position: relative;
           margin-right: 50px;
+          letter-spacing: 3px;
           @include breakpoint(smartphones) {
             margin-right: 0;
           }
