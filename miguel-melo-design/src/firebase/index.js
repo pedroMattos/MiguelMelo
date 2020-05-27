@@ -6,14 +6,14 @@ import 'firebase/firebase-storage';
 // import firebaseConfig from './firebaseConfig';
 
 export const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyCXIbcGenHCyjxJU33W6Z6UrE3TrBPLsr0",
-  authDomain: "miguel-melo-design.firebaseapp.com",
-  databaseURL: "https://miguel-melo-design.firebaseio.com",
-  projectId: "miguel-melo-design",
-  storageBucket: "miguel-melo-design.appspot.com",
-  messagingSenderId: "316780265137",
-  appId: "1:316780265137:web:863059304ea4e7e02c6c90",
-  measurementId: "G-1HT8JMXX2D"
+  apiKey: process.env.VUE_APP_API_KEY,
+  authDomain: process.env.VUE_APP_AUTH_DOMAIN,
+  databaseURL: process.env.VUE_APP_DATABASE_URL,
+  projectId: process.env.VUE_APP_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_APP_ID,
+  measurementId: process.env.VUE_APP_MEASUREMENT_ID,
 });
 // exporta o metodo de autenticação e o banco de dados
 // export default firebaseApp.auth() && firebaseApp.firestore();
