@@ -5,7 +5,7 @@ import firebase from './firebase/index';
 import './assets/scss/main.scss';
 
 Vue.use(firebase);
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 
 new Vue({
   router,
