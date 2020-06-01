@@ -78,9 +78,8 @@ export default {
 @import '../assets/scss/variables.scss';
 @import '../assets/scss/breakpoint.scss';
   #contact-form {
-    display: inline-flex;
-    @include breakpoint(smartphones) {
-      display: block;
+    @include breakpoint(minDesktop) {
+      display: inline-flex;
     }
     .input-field {
       position: relative;
