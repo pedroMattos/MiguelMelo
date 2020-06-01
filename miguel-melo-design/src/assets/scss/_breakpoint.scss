@@ -6,7 +6,7 @@
       @media (max-width: $tablets) { @content ; }
    }
      @else if $point == desktops {
-      @media (max-width: $desktops) { @content ; }
+      @media (min-width: $desktops) { @content ; }
    }
     @else if $point == largeDesktops {
       @media (max-width: $largeDesktops)  { @content ; }
@@ -16,5 +16,8 @@
     }
     @else if $point == fullHdDesktops {
       @media (max-width: $fullHdDesktops)  { @content ; }
+    }
+    @else if $point == minDesktop {
+      @media (min-width: $desktops)  { @content ; }
     }
   }
