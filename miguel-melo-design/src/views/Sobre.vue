@@ -52,21 +52,25 @@ export default {
   #main-sobre {
     position: relative;
     #text-about {
-      padding-top: 150px;
+      @include breakpoint(minDesktop) {
+        padding-top: 150px;
+      }
       @include breakpoint(smartphones) {
         padding-top: 0;
       }
     }
     h1 {
-      transform: rotate(270deg) scale(1);
-      letter-spacing: 5px;
-      cursor: default;
-      // width: fit-content;
-      text-align: center;
-      position: absolute;
-      right: -25px;
-      transition-duration: .5s;
-      bottom: 100px;
+      @include breakpoint(minDesktop) {
+        transform: rotate(270deg) scale(1);
+        letter-spacing: 5px;
+        cursor: default;
+        // width: fit-content;
+        text-align: center;
+        position: absolute;
+        right: -25px;
+        transition-duration: .5s;
+        bottom: 100px;
+      }
       @include breakpoint(smartphones) {
         position: unset;
         text-align: left;
@@ -86,7 +90,10 @@ export default {
     }
     ul {
       list-style: none;
-      display: inline-flex;
+      @include breakpoint(minDesktop) {
+        
+        display: inline-flex;
+      }
       @include breakpoint(smartphones) {
         display: block;
         li {
