@@ -88,3 +88,12 @@ nav {
     }
   }
 }
+
+.col-line-5 {
+  @include breakpoint(minDesktop) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 19.6666666667%;
+    flex: 0 0 19.666667%;
+    max-width: 19.666667%;
+  }
+}
