@@ -56,11 +56,14 @@ export default {
   },
   methods: {
     getScreen() {
-      const theScreen = screen.width;
-      if(theScreen < 990) {
-        this.screenW = 'smartphone';
-      } else {
-        this.screenW = 'desktop';
+        const theScreen = screen.width;
+        if(theScreen < 990) {
+          this.screenW = 'smartphone';
+        } else {
+          this.screenW = 'desktop';
+        }
+      onresize = () => {
+        this.getScreen();
       }
     },
     spinnerShow() {
