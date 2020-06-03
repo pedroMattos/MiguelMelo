@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="name" class="centered small-text">Miguel Melo Designer</p>
+          <p id="name" class="centered">Miguel Melo Designer</p>
         </div>
       </div>
     </div>
@@ -82,5 +82,8 @@ export default {
   #name {
     margin-top: 20px;
     font-weight: 600;
+    @include breakpoint(fullHdDesktops) {
+      font-size: 20px;
+    }
   }
 </style>
