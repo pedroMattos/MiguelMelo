@@ -35,6 +35,10 @@ export default {
       width: 50px;
       transition-duration: .5s;
       height: 50px;
+      @include breakpoint(fullHdDesktops) {
+        width: 80px;
+        height: 80px;
+      }
       &:hover {
         transform: scale(1.1);
         transition-duration: .5s;
@@ -58,6 +62,9 @@ export default {
             position: relative;
             padding: 20px 0;
             font-weight: 600;
+            @include breakpoint(fullHdDesktops) {
+              font-size: 25px;
+            }
             &::after {
               transition-duration: .5s;
               position: absolute;
