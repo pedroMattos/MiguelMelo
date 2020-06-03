@@ -30,6 +30,9 @@ export default {
     overflow: hidden;
     position: relative;
     height: 179px;
+    @include breakpoint(fullHdDesktops) {
+      height: 300px;
+    }
     &:hover {
       .overlay-content {
         opacity: 1;
@@ -51,6 +54,9 @@ export default {
       left: 0;
       transition-duration: .5s;
       background-color: $black-body-alpha;
+      @include breakpoint(fullHdDesktops) {
+        padding: 80px;
+      }
       @include breakpoint(smartphones) {
         top: 0;
         bottom: 0;
@@ -66,6 +72,12 @@ export default {
           &.title {
           font-size: 22px;
           font-weight: 700;
+          @include breakpoint(fullHdDesktops) {
+            font-size: 40px;
+          }
+        }
+        @include breakpoint(fullHdDesktops) {
+          font-size: 26px;
         }
       }
     }
