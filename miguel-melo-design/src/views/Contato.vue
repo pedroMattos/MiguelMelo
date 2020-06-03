@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/scss/variables.scss';
+@import '../assets/scss/breakpoint.scss';
   #bg-contact {
     position: absolute;
     object-fit: cover;
@@ -43,5 +45,11 @@ export default {
   }
   #form-field {
     margin-top: 150px;
+    @include breakpoint(fullHdDesktops) {
+      margin-top: 12%;
+      h1 {
+        font-size: 40px;
+      }
+    }
   }
 </style>
