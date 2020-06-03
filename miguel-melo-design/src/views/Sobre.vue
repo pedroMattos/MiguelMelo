@@ -58,6 +58,10 @@ export default {
       @include breakpoint(smartphones) {
         padding-top: 0;
       }
+      @include breakpoint(fullHdDesktops) {
+        font-size: 25px;
+        padding-top: 0;
+      }
     }
     h1 {
       @include breakpoint(minDesktop) {
@@ -70,6 +74,10 @@ export default {
         right: -25px;
         transition-duration: .5s;
         bottom: 100px;
+        @include breakpoint(fullHdDesktops) {
+          font-size: 30px;
+          right: -40px;
+        }
       }
       @include breakpoint(smartphones) {
         position: unset;
@@ -109,6 +117,10 @@ export default {
           position: relative;
           margin-right: 50px;
           letter-spacing: 3px;
+          @include breakpoint(fullHdDesktops) {
+            font-size: 25px;
+            margin-right: 0;
+          }
           @include breakpoint(smartphones) {
             margin-right: 0;
           }
@@ -162,6 +174,10 @@ export default {
         @include breakpoint(smartphones) {
           width: 100%;
           height: 100%;
+        }
+        @include breakpoint(fullHdDesktops) {
+          width: 70%;
+          height: 70%;
         }
       }
     }
