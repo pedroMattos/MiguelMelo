@@ -1,7 +1,7 @@
 <template>
   <section :class="screenW == 'smartphone' ? '' : ''" id="gallery">
     <div class="row">
-      <div v-for="item in projectData" :key="item.name" class="col-line-5 col-sm-12 no-spaces">
+      <div v-for="item in projectData" :key="item.name" class="col-line-5 col-sm-12 col-fhd-5 no-spaces">
         <router-link :to="{ name: 'ProjetoFullView', params: { nome: item.slug } }">
           <card :name="item.name"
           :type="item.type"
