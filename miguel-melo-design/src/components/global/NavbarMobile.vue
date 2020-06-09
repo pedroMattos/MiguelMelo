@@ -7,7 +7,7 @@
         <li id="menu-controller-close">Close</li>
         <br>
         <router-link :to="{ name: 'Home' }">
-          <li class="centered"><img src="../../assets/logo.png" alt="Logo"></li>
+          <li id="brand-logo" class="centered"><img src="../../assets/logo.png" alt="Logo"></li>
         </router-link>
       </ul>
       <div class="menu-section">
@@ -167,6 +167,15 @@ export default {
   }
   .menu-section {
     position: relative;
+  }
+  #brand-logo {
+    @include breakpoint(smartphones) {
+      img {
+        padding: 10px;
+        width: 85px;
+        height: auto;
+      }
+    }
   }
   // @keyframes mymove {
   //   0%   {content: 'Testando';}
