@@ -1,6 +1,7 @@
 @import '../../../node_modules/bootstrap-4-grid/css/grid.min.css';
 @import 'variables.scss';
 @import 'breakpoint.scss';
+@import 'social.scss';
 @import 'button.scss';
 @import 'spinner.scss';
 
@@ -30,6 +31,13 @@ body {
   }
   h1, h2, h3 {
     font-family: 'Poppins Medium', Arial, Helvetica, sans-serif;
+  }
+}
+
+p {
+  font-size: 15px;
+  @include breakpoint(minDesktop) {
+    font-size: 14px;
   }
 }
 
