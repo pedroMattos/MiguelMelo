@@ -29,7 +29,10 @@ export default {
   .card-img {
     overflow: hidden;
     position: relative;
-    height: 179px;
+    height: 225px;
+    @include breakpoint(minDesktops) {
+      height: 179px;
+    }
     @include breakpoint(fullHdDesktops) {
       height: 300px;
     }
