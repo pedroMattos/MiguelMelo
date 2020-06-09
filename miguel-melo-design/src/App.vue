@@ -9,6 +9,25 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
+          <p id="social-p" class="centered">
+            <ul id="social">
+              <li><a
+              rel="no-referrer"
+              target="_blank"
+              href="https://www.behance.net/miguel_melo">
+                <img src="@/assets/images/behance.png" alt="Behance Profile"></a></li>
+              <li><a
+              rel="no-referrer"
+              target="_blank"
+              href="https://www.instagram.com/migueldesignbr/">
+                <img src="@/assets/images/instagram.png" alt="Instagram Profile"></a></li>
+              <li><a
+              rel="no-referrer"
+              target="_blank"
+              href="https://twitter.com/migueldmelo">
+                <img src="@/assets/images/twitter.png" alt="Twitter Profile"></a></li>
+            </ul>
+          </p>
           <p id="name" class="centered">Miguel Melo Designer</p>
         </div>
       </div>
@@ -82,6 +101,9 @@ export default {
   #name {
     margin-top: 20px;
     font-weight: 600;
+    @include breakpoint(minDesnktops) {
+      margin: 0px;
+    }
     @include breakpoint(fullHdDesktops) {
       font-size: 20px;
     }
